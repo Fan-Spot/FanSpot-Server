@@ -18,8 +18,21 @@ spring:
     hibernate:
       ddl-auto: create
 
+  cache:
+    type: redis
+
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
+
 jwt:
   access-expiration-time: 3600000 # 1시간
   refresh-expiration-time: 2592000000 # 30일
   prefix: Bearer
   secret: ${JWT_SECRET}
+
+oauth:
+  google:
+    client-id: ${GOOGLE_CLIENT_ID}
